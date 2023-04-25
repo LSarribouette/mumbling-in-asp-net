@@ -37,5 +37,15 @@ namespace Dojo.Domain.Services
         {
             _samouraiRepository.Add(samourai);
         }
+
+        public void EditSamourai(Samourai samourai)
+        {
+            _samouraiRepository.Update(samourai);
+        }
+
+        public void DeleteSamourai(Samourai samourai)
+        {
+            _samouraiRepository.Remove(samourai);
+        }
     }
 }

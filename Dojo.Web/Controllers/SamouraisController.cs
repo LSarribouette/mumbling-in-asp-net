@@ -49,110 +49,91 @@ namespace Dojo.Web.Controllers
         // POST: Samourais/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Strength")] Samourai samourai)
+        public async Task<IActionResult> Create(Samourai samourai)
         {
             if (ModelState.IsValid)
             {
-                //_context.Add(samourai);
-                //await _context.SaveChangesAsync();
                 _samouraiService.CreateSamourai(samourai);
-                Console.WriteLine("Un nouveau samourai a été créé : " + samourai.Name);
                 return RedirectToAction(nameof(Index));
             }
             return View(samourai);
         }
 
-        //// GET: Samourais/Edit/5
-        //public async Task<IActionResult> Edit(int? id)
-        //{
-        //    if (id == null || _context.Samourai == null)
-        //    {
-        //        return NotFound();
-        //    }
+        // GET: Samourais/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-        //    var samourai = await _context.Samourai.FindAsync(id);
-        //    if (samourai == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(samourai);
-        //}
+            var samourai = _samouraiService.GetSamouraiById(id.Value);
+            if (samourai == null)
+            {
+                return NotFound();
+            }
+            return View(samourai);
+        }
 
-        //// POST: Samourais/Edit/5
-        //// To protect from overposting attacks, enable the specific properties you want to bind to.
-        //// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Strength")] Samourai samourai)
-        //{
-        //    if (id != samourai.Id)
-        //    {
-        //        return NotFound();
-        //    }
+        // POST: Samourais/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, Samourai samourai)
+        {
+            if (id != samourai.Id)
+            {
+                return NotFound();
+            }
 
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            _context.Update(samourai);
-        //            await _context.SaveChangesAsync();
-        //        }
-        //        catch (DbUpdateConcurrencyException)
-        //        {
-        //            if (!SamouraiExists(samourai.Id))
-        //            {
-        //                return NotFound();
-        //            }
-        //            else
-        //            {
-        //                throw;
-        //            }
-        //        }
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return View(samourai);
-        //}
+            if (ModelState.IsValid)
+            {
+                _samouraiService.EditSamourai(samourai);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(samourai);
+        }
 
-        //// GET: Samourais/Delete/5
-        //public async Task<IActionResult> Delete(int? id)
-        //{
-        //    if (id == null || _context.Samourai == null)
-        //    {
-        //        return NotFound();
-        //    }
+        // GET: Samourais/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-        //    var samourai = await _context.Samourai
-        //        .FirstOrDefaultAsync(m => m.Id == id);
-        //    if (samourai == null)
-        //    {
-        //        return NotFound();
-        //    }
+            var samourai = _samouraiService.GetSamouraiById(id.Value);
+            if (samourai == null)
+            {
+                return NotFound();
+            }
 
-        //    return View(samourai);
-        //}
+            return View(samourai);
+        }
 
-        //// POST: Samourais/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> DeleteConfirmed(int id)
-        //{
-        //    if (_context.Samourai == null)
-        //    {
-        //        return Problem("Entity set 'DojoWebContext.Samourai'  is null.");
-        //    }
-        //    var samourai = await _context.Samourai.FindAsync(id);
-        //    if (samourai != null)
-        //    {
-        //        _context.Samourai.Remove(samourai);
-        //    }
+        // POST: Samourais/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id, Samourai samourai)
+        {
+            if (id != samourai.Id)
+            {
+                return NotFound();
+            }
 
-        //    await _context.SaveChangesAsync();
-        //    return RedirectToAction(nameof(Index));
-        //}
+            if (samourai != null)
+            {
+                //_context.Samourai.Remove(samourai);
+                _samouraiService.DeleteSamourai(samourai);
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
 
         //private bool SamouraiExists(int id)
         //{
-        //  return (_context.Samourai?.Any(e => e.Id == id)).GetValueOrDefault();
+        //    return (_context.Samourai?.Any(e => e.Id == id)).GetValueOrDefault();
         //}
     }
 }

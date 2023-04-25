@@ -44,5 +44,21 @@ namespace Dojo.Infrastructure.Repositories
             _context.Add(newSamourai);
             _context.SaveChanges(); // on le mettra dans un service : pattern Unit of work
         }
+
+        public void Update(Samourai samourai)
+        {
+            Samourai modified = samourai;
+            modified.Id = modified.Id;
+            modified.Name = modified.Name;
+            modified.Strength = modified.Strength;
+            _context.Update(samourai);
+            _context.SaveChanges();
+        }
+
+        public void Remove(Samourai samourai)
+        {
+            _context.Remove(samourai);
+            _context.SaveChanges();
+        }
     }
 }

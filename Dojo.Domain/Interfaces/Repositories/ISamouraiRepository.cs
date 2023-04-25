@@ -17,5 +17,9 @@ namespace Dojo.Domain.Interfaces.Repositories
         Samourai GetById(int id);
 
         void Add(Samourai samourai);
+
+        void Update(Samourai samourai);
+
+        void Remove(Samourai samourai);
     }
 }
