@@ -7,16 +7,20 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Dojo.Domain.Entities;
 using Dojo.Domain.Services;
 using X.PagedList;
+using Dojo.Web.ViewModels;
+using Dojo.Web.Mappings;
 
 namespace Dojo.Web.Controllers
 {
     public class SamouraisController : Controller
     {
         private readonly SamouraiService _samouraiService;
+        private readonly ArmeService _armeService;
 
-        public SamouraisController(SamouraiService samouraiService)
+        public SamouraisController(SamouraiService samouraiService, ArmeService armeService)
         {
             _samouraiService = samouraiService;
+            _armeService = armeService;
         }
 
         // GET: Samourais
@@ -24,7 +28,7 @@ namespace Dojo.Web.Controllers
         {
             int pageSize = 10;
             int pageNumber = (page ?? 1);
-            return View(_samouraiService.GetAllSamouraisPaged(pageNumber, pageSize));
+            return View(_samouraiService.FetchAllPaged(pageNumber, pageSize));
         }
 
         // GET: Samourais/Details/5
@@ -35,28 +39,27 @@ namespace Dojo.Web.Controllers
                 return NotFound();
             }
 
-            var samourai = _samouraiService.GetSamouraiById(id.Value);
-
-            return View(samourai);
+            return View(_samouraiService.FindById(id.Value));
         }
 
         // GET: Samourais/Create
         public IActionResult Create()
         {
-            return View();
+            SamouraiVM samouraiVM = SamouraiMapping.ToVM(new Samourai(), _armeService.FetchAll());
+            return View(samouraiVM);
         }
 
         // POST: Samourais/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Samourai samourai)
+        public async Task<IActionResult> Create(SamouraiVM samouraiVM)
         {
             if (ModelState.IsValid)
             {
-                _samouraiService.CreateSamourai(samourai);
+                _samouraiService.Create(SamouraiMapping.ToModel(samouraiVM, _armeService.FetchAll()));
                 return RedirectToAction(nameof(Index));
             }
-            return View(samourai);
+            return View(samouraiVM);
         }
 
         // GET: Samourais/Edit/5
@@ -66,33 +69,31 @@ namespace Dojo.Web.Controllers
             {
                 return NotFound();
             }
-
-            var samourai = _samouraiService.GetSamouraiById(id.Value);
-            if (samourai == null)
+            
+            SamouraiVM samouraiVM = SamouraiMapping.ToVM(_samouraiService.FindById(id.Value), _armeService.FetchAll());
+            if (samouraiVM == null)
             {
                 return NotFound();
             }
-            return View(samourai);
+            return View(samouraiVM);
         }
 
         // POST: Samourais/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Samourai samourai)
+        public async Task<IActionResult> Edit(int id, SamouraiVM samouraiVM)
         {
-            if (id != samourai.Id)
+            if (id != samouraiVM.Samourai.Id)
             {
                 return NotFound();
             }
 
             if (ModelState.IsValid)
             {
-                _samouraiService.EditSamourai(samourai);
+                _samouraiService.Edit(SamouraiMapping.ToModel(samouraiVM, _armeService.FetchAll()));
                 return RedirectToAction(nameof(Index));
             }
-            return View(samourai);
+            return View(samouraiVM);
         }
 
         // GET: Samourais/Delete/5
@@ -103,7 +104,7 @@ namespace Dojo.Web.Controllers
                 return NotFound();
             }
 
-            var samourai = _samouraiService.GetSamouraiById(id.Value);
+            var samourai = _samouraiService.FindById(id.Value);
             if (samourai == null)
             {
                 return NotFound();
@@ -124,16 +125,10 @@ namespace Dojo.Web.Controllers
 
             if (samourai != null)
             {
-                //_context.Samourai.Remove(samourai);
-                _samouraiService.DeleteSamourai(samourai);
+                _samouraiService.Delete(samourai);
             }
 
             return RedirectToAction(nameof(Index));
         }
-
-        //private bool SamouraiExists(int id)
-        //{
-        //    return (_context.Samourai?.Any(e => e.Id == id)).GetValueOrDefault();
-        //}
     }
 }

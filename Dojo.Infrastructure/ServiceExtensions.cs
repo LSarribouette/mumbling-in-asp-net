@@ -12,7 +12,7 @@ namespace Dojo.Infrastructure
     {
         public static void AddInfrastructureServices(this IServiceCollection services, string connectionString)
         {
-            services.AddDbContext<DojoWebContext>(
+            services.AddDbContext<DojoContext>(
                 options => options
                     .UseLazyLoadingProxies()
                     .UseSqlServer(connectionString ?? throw new InvalidOperationException("Connection string 'DojoWebContext' not found.")));

@@ -5,157 +5,126 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Dojo.Domain.Entities;
+using Dojo.Infrastructure;
+using Microsoft.EntityFrameworkCore;
+using Dojo.Domain.Services;
 
 namespace Dojo.Web.Controllers
 {
     public class ArmesController : Controller
     {
-        //private readonly DojoWebContext _context;
+        private readonly ArmeService _armeService;
 
-        //public ArmesController(DojoWebContext context)
-        //{
-        //    _context = context;
-        //}
+        public ArmesController(ArmeService armeService)
+        {
+            _armeService = armeService;
+        }
 
-        //// GET: Armes
-        //public async Task<IActionResult> Index()
-        //{
-        //      return _context.Arme != null ? 
-        //                  View(await _context.Arme.ToListAsync()) :
-        //                  Problem("Entity set 'DojoWebContext.Arme'  is null.");
-        //}
+        // GET: Armes
+        public async Task<IActionResult> Index()
+        {
+            return View(_armeService.FetchAll());
+        }
 
-        //// GET: Armes/Details/5
-        //public async Task<IActionResult> Details(int? id)
-        //{
-        //    if (id == null || _context.Arme == null)
-        //    {
-        //        return NotFound();
-        //    }
+        // GET: Armes/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-        //    var arme = await _context.Arme
-        //        .FirstOrDefaultAsync(m => m.Id == id);
-        //    if (arme == null)
-        //    {
-        //        return NotFound();
-        //    }
+            return View(_armeService.FindById(id.Value));
+        }
 
-        //    return View(arme);
-        //}
+        // GET: Armes/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
 
-        //// GET: Armes/Create
-        //public IActionResult Create()
-        //{
-        //    return View();
-        //}
+        // POST: Armes/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Arme arme)
+        {
+            if (ModelState.IsValid)
+            {
+                _armeService.Create(arme);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(arme);
+        }
 
-        //// POST: Armes/Create
-        //// To protect from overposting attacks, enable the specific properties you want to bind to.
-        //// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Create([Bind("Id,Name,Damage")] Arme arme)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        _context.Add(arme);
-        //        await _context.SaveChangesAsync();
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return View(arme);
-        //}
+        // GET: Armes/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-        //// GET: Armes/Edit/5
-        //public async Task<IActionResult> Edit(int? id)
-        //{
-        //    if (id == null || _context.Arme == null)
-        //    {
-        //        return NotFound();
-        //    }
+            var arme = _armeService.FindById(id.Value);
+            if (arme == null)
+            {
+                return NotFound();
+            }
+            return View(arme);
+        }
 
-        //    var arme = await _context.Arme.FindAsync(id);
-        //    if (arme == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(arme);
-        //}
+        // POST: Armes/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Damage")] Arme arme)
+        {
+            if (id != arme.Id)
+            {
+                return NotFound();
+            }
 
-        //// POST: Armes/Edit/5
-        //// To protect from overposting attacks, enable the specific properties you want to bind to.
-        //// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Damage")] Arme arme)
-        //{
-        //    if (id != arme.Id)
-        //    {
-        //        return NotFound();
-        //    }
+            if (ModelState.IsValid)
+            {
+                _armeService.Edit(arme);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(arme);
+        }
 
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            _context.Update(arme);
-        //            await _context.SaveChangesAsync();
-        //        }
-        //        catch (DbUpdateConcurrencyException)
-        //        {
-        //            if (!ArmeExists(arme.Id))
-        //            {
-        //                return NotFound();
-        //            }
-        //            else
-        //            {
-        //                throw;
-        //            }
-        //        }
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return View(arme);
-        //}
+        // GET: Armes/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-        //// GET: Armes/Delete/5
-        //public async Task<IActionResult> Delete(int? id)
-        //{
-        //    if (id == null || _context.Arme == null)
-        //    {
-        //        return NotFound();
-        //    }
+            var arme = _armeService.FindById(id.Value);
+            if (arme == null)
+            {
+                return NotFound();
+            }
 
-        //    var arme = await _context.Arme
-        //        .FirstOrDefaultAsync(m => m.Id == id);
-        //    if (arme == null)
-        //    {
-        //        return NotFound();
-        //    }
+            return View(arme);
+        }
 
-        //    return View(arme);
-        //}
+        // POST: Armes/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id, Arme arme)
+        {
+            if (id != arme.Id)
+            {
+                return NotFound();
+            }
 
-        //// POST: Armes/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> DeleteConfirmed(int id)
-        //{
-        //    if (_context.Arme == null)
-        //    {
-        //        return Problem("Entity set 'DojoWebContext.Arme'  is null.");
-        //    }
-        //    var arme = await _context.Arme.FindAsync(id);
-        //    if (arme != null)
-        //    {
-        //        _context.Arme.Remove(arme);
-        //    }
-            
-        //    await _context.SaveChangesAsync();
-        //    return RedirectToAction(nameof(Index));
-        //}
+            if (arme != null)
+            {
+                _armeService.Delete(arme);
+            }
 
-        //private bool ArmeExists(int id)
-        //{
-        //  return (_context.Arme?.Any(e => e.Id == id)).GetValueOrDefault();
-        //}
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

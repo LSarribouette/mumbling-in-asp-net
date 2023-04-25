@@ -5,13 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using X.PagedList;
 
 namespace Dojo.Domain.Services
 {
-    public class SamouraiService : BaseService<Samourai>
+    public class ArmeService : BaseService<Arme>
     {
-        public SamouraiService(ISamouraiRepository repository) : base(repository)
+        public ArmeService(IArmeRepository repository) : base(repository)
         {
         }
     }

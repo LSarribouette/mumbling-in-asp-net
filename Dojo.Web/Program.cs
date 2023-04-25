@@ -9,7 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddInfrastructureServices(builder.Configuration.GetConnectionString("DojoWebContext"));
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<ISamouraiRepository, SamouraiRepository>();
+builder.Services.AddTransient<IArmeRepository, ArmeRepository>();
+//builder.Services.AddTransient<IRepository, BaseRepository>();
 builder.Services.AddTransient<SamouraiService>();
+builder.Services.AddTransient<ArmeService>();
 
 
 var app = builder.Build();
