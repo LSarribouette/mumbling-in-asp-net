@@ -8,10 +8,11 @@ using Dojo.Domain.Entities;
 using Dojo.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Dojo.Domain.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Dojo.Web.Controllers
 {
-    public class ArmesController : Controller
+    public class ArmesController : BaseController
     {
         private readonly ArmeService _armeService;
 
@@ -20,6 +21,7 @@ namespace Dojo.Web.Controllers
             _armeService = armeService;
         }
 
+        [AllowAnonymous]
         // GET: Armes
         public async Task<IActionResult> Index()
         {

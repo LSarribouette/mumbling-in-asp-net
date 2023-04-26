@@ -1,11 +1,12 @@
 ﻿using Dojo.Domain.Entities;
 using Dojo.Domain.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dojo.Web.Controllers
 {
-    public class ArtsMartiauxController : Controller
+    public class ArtsMartiauxController : BaseController
     {
 
         private readonly ArtMartialService _artMartialService;
@@ -15,6 +16,7 @@ namespace Dojo.Web.Controllers
             _artMartialService = artMartialService;
         }
 
+        [AllowAnonymous]
         // GET: Armes
         public async Task<IActionResult> Index()
         {

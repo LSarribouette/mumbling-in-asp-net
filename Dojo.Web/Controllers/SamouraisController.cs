@@ -9,10 +9,11 @@ using Dojo.Domain.Services;
 using X.PagedList;
 using Dojo.Web.ViewModels;
 using Dojo.Web.Mappings;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Dojo.Web.Controllers
 {
-    public class SamouraisController : Controller
+    public class SamouraisController : BaseController
     {
         private readonly SamouraiService _samouraiService;
         private readonly ArmeService _armeService;
@@ -25,6 +26,7 @@ namespace Dojo.Web.Controllers
             _artMartialService = artMartialService;
         }
 
+        [AllowAnonymous]
         // GET: Samourais
         public async Task<IActionResult> Index(int? page)
         {

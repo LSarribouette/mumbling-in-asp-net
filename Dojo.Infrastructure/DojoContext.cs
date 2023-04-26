@@ -4,10 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Dojo.Domain.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Dojo.Infrastructure
 {
-    public class DojoContext : DbContext
+    public class DojoContext : IdentityDbContext
     {
         public DojoContext (DbContextOptions<DojoContext> options) : base(options)
         {
