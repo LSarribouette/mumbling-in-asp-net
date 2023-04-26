@@ -23,6 +23,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Arme)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArtsMartiaux)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -46,6 +49,14 @@
                     {
                         <i>[aucune arme]</i>
                     }
+                </td>
+                <td>
+                    <ul>
+                        @foreach (var artM in item.ArtsMartiaux)
+                        {
+                            <li>@artM.Name</li>
+                        }
+                    </ul>
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

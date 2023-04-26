@@ -12,6 +12,11 @@ namespace Dojo.Web.ViewModels
         [DisplayName("Arme")]
         public int? IdArme { get; set; }
 
+        [DisplayName("Arts martiaux maîtrisés")]
+        public List<int> IdsArts { get; set; } = new List<int>();
+
         public SelectList? OptionArmes { get; set; }
+
+        public SelectList? OptionArtsMartiaux { get; set; }
     }
 }

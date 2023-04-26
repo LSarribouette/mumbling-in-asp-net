@@ -14,6 +14,23 @@ namespace Dojo.Domain.Entities
 
         public int Strength { get; set; }
 
+        // relation one to one
         public virtual Arme? Arme { get; set; }
+
+        // relation manitoumani
+        public virtual ICollection<ArtMartial>? ArtsMartiaux { get; set; }
+
+        public int Potential
+        {
+            get
+            {
+                int potential = Strength;
+                if (Arme != null)
+                    potential += Arme.Damage;
+                if (ArtsMartiaux != null)
+                    potential *= ArtsMartiaux.Count + 1;
+                return potential;
+            }
+        }
     }
 }

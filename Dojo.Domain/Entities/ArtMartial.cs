@@ -11,5 +11,7 @@ namespace Dojo.Domain.Entities
         public int Id { get; set; }
 
         public string Name { get; set; }
+
+        public virtual ICollection<Samourai>? Samourais { get; set; }
     }
 }

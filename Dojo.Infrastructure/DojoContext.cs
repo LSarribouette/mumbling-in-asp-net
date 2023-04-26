@@ -25,6 +25,9 @@ namespace Dojo.Infrastructure
             int idArtMartial = 1;
             Random r = new Random();
 
+            //modelBuilder.Entity<Arme>().HasOne<Samourai>().WithOne(x => x.Arme).IsRequired(false);
+            modelBuilder.Entity<Samourai>().HasOne<Arme>().WithOne(x => x.Proprietaire).HasForeignKey<Arme>().IsRequired(false);
+
             // Arts martiaux
             modelBuilder.Entity<ArtMartial>().HasData(new ArtMartial { Id = idArtMartial++, Name = "Krav Maga" });
             modelBuilder.Entity<ArtMartial>().HasData(new ArtMartial { Id = idArtMartial++, Name = "Keysi Fighting Method" });

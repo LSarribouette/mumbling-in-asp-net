@@ -13,5 +13,7 @@ namespace Dojo.Domain.Entities
         public string Name { get; set; }
 
         public int Damage { get; set; }
+
+        public virtual Samourai? Proprietaire { get; set; }
     }
 }

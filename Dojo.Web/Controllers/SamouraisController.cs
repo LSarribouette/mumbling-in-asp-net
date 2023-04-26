@@ -16,11 +16,13 @@ namespace Dojo.Web.Controllers
     {
         private readonly SamouraiService _samouraiService;
         private readonly ArmeService _armeService;
+        private readonly ArtMartialService _artMartialService;
 
-        public SamouraisController(SamouraiService samouraiService, ArmeService armeService)
+        public SamouraisController(SamouraiService samouraiService, ArmeService armeService, ArtMartialService artMartialService)
         {
             _samouraiService = samouraiService;
             _armeService = armeService;
+            _artMartialService = artMartialService;
         }
 
         // GET: Samourais
@@ -45,7 +47,7 @@ namespace Dojo.Web.Controllers
         // GET: Samourais/Create
         public IActionResult Create()
         {
-            SamouraiVM samouraiVM = SamouraiMapping.ToVM(new Samourai(), _armeService.FetchAll());
+            SamouraiVM samouraiVM = SamouraiMapping.ToVM(new Samourai(), _armeService.FetchAll(), _artMartialService.FetchAll());
             return View(samouraiVM);
         }
 
@@ -56,7 +58,7 @@ namespace Dojo.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                _samouraiService.Create(SamouraiMapping.ToModel(samouraiVM, _armeService.FetchAll()));
+                _samouraiService.Create(SamouraiMapping.ToModel(samouraiVM, _armeService.FetchAll(), _artMartialService.FetchAll()));
                 return RedirectToAction(nameof(Index));
             }
             return View(samouraiVM);
@@ -70,7 +72,7 @@ namespace Dojo.Web.Controllers
                 return NotFound();
             }
             
-            SamouraiVM samouraiVM = SamouraiMapping.ToVM(_samouraiService.FindById(id.Value), _armeService.FetchAll());
+            SamouraiVM samouraiVM = SamouraiMapping.ToVM(_samouraiService.FindById(id.Value), _armeService.FetchAll(), _artMartialService.FetchAll());
             if (samouraiVM == null)
             {
                 return NotFound();
@@ -90,7 +92,7 @@ namespace Dojo.Web.Controllers
 
             if (ModelState.IsValid)
             {
-                _samouraiService.Edit(SamouraiMapping.ToModel(samouraiVM, _armeService.FetchAll()));
+                _samouraiService.Edit(SamouraiMapping.ToModel(samouraiVM, _armeService.FetchAll(), _artMartialService.FetchAll()));
                 return RedirectToAction(nameof(Index));
             }
             return View(samouraiVM);

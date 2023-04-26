@@ -17,3 +17,10 @@
     </select>
     <span asp-validation-for="IdArme" class="text-danger"></span>
 </div>
+<div class="form-group">
+    <label asp-for="IdsArts" class="control-label"></label>
+    <select asp-for="IdsArts" asp-items="Model.OptionArtsMartiaux" class="form-control">
+        <option value="">[aucun art martial]</option>
+    </select>
+    <span asp-validation-for="IdsArts" class="text-danger"></span>
+</div>
