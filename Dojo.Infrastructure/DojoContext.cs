@@ -22,7 +22,20 @@ namespace Dojo.Infrastructure
             base.OnModelCreating(modelBuilder);
             int idSamourai = 1;
             int idArme = 1;
+            int idArtMartial = 1;
             Random r = new Random();
+
+            // Arts martiaux
+            modelBuilder.Entity<ArtMartial>().HasData(new ArtMartial { Id = idArtMartial++, Name = "Krav Maga" });
+            modelBuilder.Entity<ArtMartial>().HasData(new ArtMartial { Id = idArtMartial++, Name = "Keysi Fighting Method" });
+            modelBuilder.Entity<ArtMartial>().HasData(new ArtMartial { Id = idArtMartial++, Name = "Jiu-Jitsu Brésilien" });
+            modelBuilder.Entity<ArtMartial>().HasData(new ArtMartial { Id = idArtMartial++, Name = "Judo" });
+            modelBuilder.Entity<ArtMartial>().HasData(new ArtMartial { Id = idArtMartial++, Name = "Muay Thai" });
+            modelBuilder.Entity<ArtMartial>().HasData(new ArtMartial { Id = idArtMartial++, Name = "Taekwondo" });
+            modelBuilder.Entity<ArtMartial>().HasData(new ArtMartial { Id = idArtMartial++, Name = "Jujutsu japonais" });
+            modelBuilder.Entity<ArtMartial>().HasData(new ArtMartial { Id = idArtMartial++, Name = "Aïkido" });
+            modelBuilder.Entity<ArtMartial>().HasData(new ArtMartial { Id = idArtMartial++, Name = "Boxe" });
+            modelBuilder.Entity<ArtMartial>().HasData(new ArtMartial { Id = idArtMartial++, Name = "Karaté" });
 
             // Armes
             modelBuilder.Entity<Arme>().HasData(new Arme { Id = idArme++, Name = "Katana", Damage = r.Next(500) });

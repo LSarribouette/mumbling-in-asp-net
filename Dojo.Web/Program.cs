@@ -10,9 +10,11 @@ builder.Services.AddInfrastructureServices(builder.Configuration.GetConnectionSt
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<ISamouraiRepository, SamouraiRepository>();
 builder.Services.AddTransient<IArmeRepository, ArmeRepository>();
+builder.Services.AddTransient<IArtMartialRepository, ArtMartialRepository>();
 //builder.Services.AddTransient<IRepository, BaseRepository>();
 builder.Services.AddTransient<SamouraiService>();
 builder.Services.AddTransient<ArmeService>();
+builder.Services.AddTransient<ArtMartialService>();
 
 
 var app = builder.Build();

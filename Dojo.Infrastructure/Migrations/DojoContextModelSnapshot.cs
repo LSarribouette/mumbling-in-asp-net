@@ -48,62 +48,131 @@ namespace Dojo.Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            Damage = 461,
+                            Damage = 426,
                             Name = "Katana"
                         },
                         new
                         {
                             Id = 2,
-                            Damage = 484,
+                            Damage = 230,
                             Name = "Yumi"
                         },
                         new
                         {
                             Id = 3,
-                            Damage = 363,
+                            Damage = 130,
                             Name = "Wakisashi"
                         },
                         new
                         {
                             Id = 4,
-                            Damage = 482,
+                            Damage = 403,
                             Name = "Naginata"
                         },
                         new
                         {
                             Id = 5,
-                            Damage = 57,
+                            Damage = 37,
                             Name = "Yari"
                         },
                         new
                         {
                             Id = 6,
-                            Damage = 300,
+                            Damage = 296,
                             Name = "Masakari"
                         },
                         new
                         {
                             Id = 7,
-                            Damage = 102,
+                            Damage = 339,
                             Name = "Nodachi"
                         },
                         new
                         {
                             Id = 8,
-                            Damage = 211,
+                            Damage = 487,
                             Name = "Tessen"
                         },
                         new
                         {
                             Id = 9,
-                            Damage = 150,
+                            Damage = 404,
                             Name = "Tachi"
                         },
                         new
                         {
                             Id = 10,
-                            Damage = 455,
+                            Damage = 128,
                             Name = "Shuriken"
+                        });
+                });
+
+            modelBuilder.Entity("Dojo.Domain.Entities.ArtMartial", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ArtMartial");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Krav Maga"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Keysi Fighting Method"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Jiu-Jitsu Brésilien"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Judo"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Muay Thai"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Taekwondo"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Jujutsu japonais"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "Aïkido"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "Boxe"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "Karaté"
                         });
                 });
 
@@ -136,1921 +205,1921 @@ namespace Dojo.Infrastructure.Migrations
                         {
                             Id = 1,
                             Name = "Abe Masakatsu",
-                            Strength = 134
+                            Strength = 1393
                         },
                         new
                         {
                             Id = 2,
                             Name = "Adachi Yasumori",
-                            Strength = 263
+                            Strength = 1296
                         },
                         new
                         {
                             Id = 3,
                             Name = "Adachi Kagemori",
-                            Strength = 541
+                            Strength = 159
                         },
                         new
                         {
                             Id = 4,
                             Name = "Adams William",
-                            Strength = 1515
+                            Strength = 1169
                         },
                         new
                         {
                             Id = 5,
                             Name = "Aiou Mototsuna",
-                            Strength = 638
+                            Strength = 1941
                         },
                         new
                         {
                             Id = 6,
                             Name = "Akai Terukage",
-                            Strength = 672
+                            Strength = 1801
                         },
                         new
                         {
                             Id = 7,
                             Name = "Akao Kiyotsuna",
-                            Strength = 711
+                            Strength = 295
                         },
                         new
                         {
                             Id = 8,
                             Name = "Akechi Mitsuhide",
-                            Strength = 1090
+                            Strength = 1791
                         },
                         new
                         {
                             Id = 9,
                             Name = "Akiyama Nobutomo",
-                            Strength = 1371
+                            Strength = 1580
                         },
                         new
                         {
                             Id = 10,
                             Name = "Amago Haruhisa",
-                            Strength = 1099
+                            Strength = 1217
                         },
                         new
                         {
                             Id = 11,
                             Name = "Amago Yoshihisa",
-                            Strength = 1580
+                            Strength = 1316
                         },
                         new
                         {
                             Id = 12,
                             Name = "Andō Morinari",
-                            Strength = 249
+                            Strength = 1951
                         },
                         new
                         {
                             Id = 13,
                             Name = "Ankokuji Ekei",
-                            Strength = 621
+                            Strength = 1150
                         },
                         new
                         {
                             Id = 14,
                             Name = "Aochi Shigetsuna",
-                            Strength = 357
+                            Strength = 812
                         },
                         new
                         {
                             Id = 15,
                             Name = "Aokage Takaakira",
-                            Strength = 1976
+                            Strength = 286
                         },
                         new
                         {
                             Id = 16,
                             Name = "Aoki Kazushige",
-                            Strength = 650
+                            Strength = 1319
                         },
                         new
                         {
                             Id = 17,
                             Name = "Akahori Chohichi",
-                            Strength = 1058
+                            Strength = 192
                         },
                         new
                         {
                             Id = 18,
                             Name = "Arai Hakuseki",
-                            Strength = 1948
+                            Strength = 229
                         },
                         new
                         {
                             Id = 19,
                             Name = "Araki Motokiyo",
-                            Strength = 975
+                            Strength = 892
                         },
                         new
                         {
                             Id = 20,
                             Name = "Araki Murashige",
-                            Strength = 1137
+                            Strength = 1501
                         },
                         new
                         {
                             Id = 21,
                             Name = "Araki Muratsugu",
-                            Strength = 1937
+                            Strength = 843
                         },
                         new
                         {
                             Id = 22,
                             Name = "Arima Kihei",
-                            Strength = 1150
+                            Strength = 1751
                         },
                         new
                         {
                             Id = 23,
                             Name = "Asakura Yoshikage",
-                            Strength = 1950
+                            Strength = 1509
                         },
                         new
                         {
                             Id = 24,
                             Name = "Ayame Kagekatsu",
-                            Strength = 628
+                            Strength = 1603
                         },
                         new
                         {
                             Id = 25,
                             Name = "Azai Hisamasa",
-                            Strength = 1911
+                            Strength = 714
                         },
                         new
                         {
                             Id = 26,
                             Name = "Azai Nagamasa",
-                            Strength = 581
+                            Strength = 1385
                         },
                         new
                         {
                             Id = 27,
                             Name = "Azai Sukemasa",
-                            Strength = 706
+                            Strength = 188
                         },
                         new
                         {
                             Id = 28,
                             Name = "Baba Nobufusa",
-                            Strength = 1069
+                            Strength = 1494
                         },
                         new
                         {
                             Id = 29,
                             Name = "Bessho Nagaharu",
-                            Strength = 907
+                            Strength = 204
                         },
                         new
                         {
                             Id = 30,
                             Name = "Chacha",
-                            Strength = 520
+                            Strength = 885
                         },
                         new
                         {
                             Id = 31,
                             Name = "Chiba Shusaku Narimasa",
-                            Strength = 1869
+                            Strength = 448
                         },
                         new
                         {
                             Id = 32,
                             Name = "Chōsokabe Morichika",
-                            Strength = 1893
+                            Strength = 1499
                         },
                         new
                         {
                             Id = 33,
                             Name = "Chōsokabe Kunichika",
-                            Strength = 1306
+                            Strength = 1300
                         },
                         new
                         {
                             Id = 34,
                             Name = "Chōsokabe Motochika",
-                            Strength = 1490
+                            Strength = 599
                         },
                         new
                         {
                             Id = 35,
                             Name = "Chōsokabe Nobuchika",
-                            Strength = 480
+                            Strength = 10
                         },
                         new
                         {
                             Id = 36,
                             Name = "Collache Eugène",
-                            Strength = 1154
+                            Strength = 282
                         },
                         new
                         {
                             Id = 37,
                             Name = "Date Masamune",
-                            Strength = 696
+                            Strength = 737
                         },
                         new
                         {
                             Id = 38,
                             Name = "Date Shigezane",
-                            Strength = 951
+                            Strength = 1112
                         },
                         new
                         {
                             Id = 39,
                             Name = "Doi Toshikatsu",
-                            Strength = 1931
+                            Strength = 1757
                         },
                         new
                         {
                             Id = 40,
                             Name = "Etō Shinpei",
-                            Strength = 1105
+                            Strength = 616
                         },
                         new
                         {
                             Id = 41,
                             Name = "Endō Naotsune",
-                            Strength = 867
+                            Strength = 1980
                         },
                         new
                         {
                             Id = 42,
                             Name = "Enjoji Nobutane",
-                            Strength = 1190
+                            Strength = 1672
                         },
                         new
                         {
                             Id = 43,
                             Name = "Enomoto Takeaki",
-                            Strength = 1601
+                            Strength = 1875
                         },
                         new
                         {
                             Id = 44,
                             Name = "Era Fusahide",
-                            Strength = 1144
+                            Strength = 961
                         },
                         new
                         {
                             Id = 45,
                             Name = "Fūma Kotarō",
-                            Strength = 1921
+                            Strength = 1284
                         },
                         new
                         {
                             Id = 46,
                             Name = "Fuwa Mitsuharu",
-                            Strength = 1584
+                            Strength = 209
                         },
                         new
                         {
                             Id = 47,
                             Name = "Fukushima Masanori",
-                            Strength = 1388
+                            Strength = 1898
                         },
                         new
                         {
                             Id = 48,
                             Name = "Gamō Katahide",
-                            Strength = 45
+                            Strength = 843
                         },
                         new
                         {
                             Id = 49,
                             Name = "Gamō Ujisato",
-                            Strength = 703
+                            Strength = 1967
                         },
                         new
                         {
                             Id = 50,
                             Name = "Harada Naomasa",
-                            Strength = 198
+                            Strength = 1080
                         },
                         new
                         {
                             Id = 51,
                             Name = "Harada Nobutane",
-                            Strength = 674
+                            Strength = 949
                         },
                         new
                         {
                             Id = 52,
                             Name = "Harada Sanosuke",
-                            Strength = 438
+                            Strength = 753
                         },
                         new
                         {
                             Id = 53,
                             Name = "Hasekura Tsunenaga",
-                            Strength = 1492
+                            Strength = 16
                         },
                         new
                         {
                             Id = 54,
                             Name = "Hattori Hanzō",
-                            Strength = 897
+                            Strength = 872
                         },
                         new
                         {
                             Id = 55,
                             Name = "Hatano Hideharu",
-                            Strength = 556
+                            Strength = 1931
                         },
                         new
                         {
                             Id = 56,
                             Name = "Hasegawa Eishin",
-                            Strength = 1708
+                            Strength = 960
                         },
                         new
                         {
                             Id = 57,
                             Name = "Hayashizaki Jinsuke Shigenobu",
-                            Strength = 944
+                            Strength = 481
                         },
                         new
                         {
                             Id = 58,
                             Name = "Hayashi Narinaga",
-                            Strength = 633
+                            Strength = 981
                         },
                         new
                         {
                             Id = 59,
                             Name = "Hijikata Toshizo",
-                            Strength = 1387
+                            Strength = 1264
                         },
                         new
                         {
                             Id = 60,
                             Name = "Hirate Masahide",
-                            Strength = 1456
+                            Strength = 1467
                         },
                         new
                         {
                             Id = 61,
                             Name = "Hitotsubashi Keiki",
-                            Strength = 1245
+                            Strength = 763
                         },
                         new
                         {
                             Id = 62,
                             Name = "Hōjō Masako",
-                            Strength = 1344
+                            Strength = 780
                         },
                         new
                         {
                             Id = 63,
                             Name = "Hōjō Tokimune",
-                            Strength = 1838
+                            Strength = 167
                         },
                         new
                         {
                             Id = 64,
                             Name = "Hōjō Ujiyasu",
-                            Strength = 402
+                            Strength = 1757
                         },
                         new
                         {
                             Id = 65,
                             Name = "Hōjō Ujimasa",
-                            Strength = 1463
+                            Strength = 695
                         },
                         new
                         {
                             Id = 66,
                             Name = "Honda Tadakatsu",
-                            Strength = 689
+                            Strength = 1959
                         },
                         new
                         {
                             Id = 67,
                             Name = "Honda Tadatomo",
-                            Strength = 361
+                            Strength = 1817
                         },
                         new
                         {
                             Id = 68,
                             Name = "Honganji Kennyo",
-                            Strength = 603
+                            Strength = 1976
                         },
                         new
                         {
                             Id = 69,
                             Name = "Horio Yoshiharu",
-                            Strength = 1465
+                            Strength = 1983
                         },
                         new
                         {
                             Id = 70,
                             Name = "Hosokawa Fujitaka",
-                            Strength = 1499
+                            Strength = 1216
                         },
                         new
                         {
                             Id = 71,
                             Name = "Hosokawa Gracia",
-                            Strength = 410
+                            Strength = 578
                         },
                         new
                         {
                             Id = 72,
                             Name = "Hosokawa Tadaoki",
-                            Strength = 1162
+                            Strength = 326
                         },
                         new
                         {
                             Id = 73,
                             Name = "Hotta Masatoshi",
-                            Strength = 1330
+                            Strength = 1199
                         },
                         new
                         {
                             Id = 74,
                             Name = "Ii Naoaki",
-                            Strength = 1864
+                            Strength = 230
                         },
                         new
                         {
                             Id = 75,
                             Name = "Ii Naomasa",
-                            Strength = 73
+                            Strength = 1316
                         },
                         new
                         {
                             Id = 76,
                             Name = "Ii Naomori",
-                            Strength = 1939
+                            Strength = 994
                         },
                         new
                         {
                             Id = 77,
                             Name = "Ii Naonaka",
-                            Strength = 1298
+                            Strength = 1717
                         },
                         new
                         {
                             Id = 78,
                             Name = "Ii Naosuke",
-                            Strength = 1436
+                            Strength = 1133
                         },
                         new
                         {
                             Id = 79,
                             Name = "Ii Naotaka",
-                            Strength = 1441
+                            Strength = 1892
                         },
                         new
                         {
                             Id = 80,
                             Name = "Ii Naotora",
-                            Strength = 1760
+                            Strength = 1895
                         },
                         new
                         {
                             Id = 81,
                             Name = "Ii Naoyuki",
-                            Strength = 446
+                            Strength = 1721
                         },
                         new
                         {
                             Id = 82,
                             Name = "Ii Naozumi",
-                            Strength = 1549
+                            Strength = 815
                         },
                         new
                         {
                             Id = 83,
                             Name = "Iizasa Ienao",
-                            Strength = 557
+                            Strength = 1841
                         },
                         new
                         {
                             Id = 84,
                             Name = "Ijuin Tadaaki",
-                            Strength = 1674
+                            Strength = 516
                         },
                         new
                         {
                             Id = 85,
                             Name = "Ikeda Tsuneoki",
-                            Strength = 143
+                            Strength = 909
                         },
                         new
                         {
                             Id = 86,
                             Name = "Imagawa Ujizane",
-                            Strength = 745
+                            Strength = 1931
                         },
                         new
                         {
                             Id = 87,
                             Name = "Imagawa Yoshimoto",
-                            Strength = 1841
+                            Strength = 436
                         },
                         new
                         {
                             Id = 88,
                             Name = "Imai Kanehira",
-                            Strength = 1839
+                            Strength = 1279
                         },
                         new
                         {
                             Id = 89,
                             Name = "Inaba Yoshimichi",
-                            Strength = 711
+                            Strength = 1746
                         },
                         new
                         {
                             Id = 90,
                             Name = "Inugami Nagayasu",
-                            Strength = 978
+                            Strength = 1107
                         },
                         new
                         {
                             Id = 91,
                             Name = "Ishida Mitsunari",
-                            Strength = 220
+                            Strength = 368
                         },
                         new
                         {
                             Id = 92,
                             Name = "Isshiki Fujinaga",
-                            Strength = 562
+                            Strength = 1607
                         },
                         new
                         {
                             Id = 93,
                             Name = "Itagaki Nobukata",
-                            Strength = 233
+                            Strength = 239
                         },
                         new
                         {
                             Id = 94,
                             Name = "Itō Hirobumi",
-                            Strength = 1231
+                            Strength = 102
                         },
                         new
                         {
                             Id = 95,
                             Name = "Iwanari Tomomichi",
-                            Strength = 776
+                            Strength = 1000
                         },
                         new
                         {
                             Id = 96,
                             Name = "Jinbo Nagamoto",
-                            Strength = 596
+                            Strength = 1604
                         },
                         new
                         {
                             Id = 97,
                             Name = "Jonas Tönse",
-                            Strength = 967
+                            Strength = 494
                         },
                         new
                         {
                             Id = 98,
                             Name = "Kannan Kumar(Salem)",
-                            Strength = 1082
+                            Strength = 1426
                         },
                         new
                         {
                             Id = 99,
                             Name = "Kakeda Toshimune",
-                            Strength = 874
+                            Strength = 1409
                         },
                         new
                         {
                             Id = 100,
                             Name = "Kaneko Ietada",
-                            Strength = 630
+                            Strength = 864
                         },
                         new
                         {
                             Id = 101,
                             Name = "Katagiri Katsumoto",
-                            Strength = 1343
+                            Strength = 891
                         },
                         new
                         {
                             Id = 102,
                             Name = "Katakura Kojūro",
-                            Strength = 66
+                            Strength = 964
                         },
                         new
                         {
                             Id = 103,
                             Name = "Katakura Shigenaga",
-                            Strength = 788
+                            Strength = 426
                         },
                         new
                         {
                             Id = 104,
                             Name = "Kataoka Mitsumasa",
-                            Strength = 520
+                            Strength = 1265
                         },
                         new
                         {
                             Id = 105,
                             Name = "Katō Kiyomasa",
-                            Strength = 73
+                            Strength = 298
                         },
                         new
                         {
                             Id = 106,
                             Name = "Kawakami Gensai",
-                            Strength = 809
+                            Strength = 250
                         },
                         new
                         {
                             Id = 107,
                             Name = "Kido Takayoshi",
-                            Strength = 1458
+                            Strength = 1410
                         },
                         new
                         {
                             Id = 108,
                             Name = "Kikkawa Hiroie",
-                            Strength = 293
+                            Strength = 1094
                         },
                         new
                         {
                             Id = 109,
                             Name = "Kimotsuki Kanetsugu",
-                            Strength = 1430
+                            Strength = 1508
                         },
                         new
                         {
                             Id = 110,
                             Name = "Kitamura Kansuke",
-                            Strength = 1235
+                            Strength = 1149
                         },
                         new
                         {
                             Id = 111,
                             Name = "Kobayakawa Hideaki",
-                            Strength = 1608
+                            Strength = 1589
                         },
                         new
                         {
                             Id = 112,
                             Name = "Kobayakawa Hidekane",
-                            Strength = 1501
+                            Strength = 463
                         },
                         new
                         {
                             Id = 113,
                             Name = "Kobayakawa Takakage",
-                            Strength = 526
+                            Strength = 1675
                         },
                         new
                         {
                             Id = 114,
                             Name = "Konishi Yukinaga",
-                            Strength = 222
+                            Strength = 1559
                         },
                         new
                         {
                             Id = 115,
                             Name = "Kojima Toyoharu",
-                            Strength = 1049
+                            Strength = 266
                         },
                         new
                         {
                             Id = 116,
                             Name = "Kuroda Kanbei",
-                            Strength = 1968
+                            Strength = 352
                         },
                         new
                         {
                             Id = 117,
                             Name = "Kuroda Kiyotaka",
-                            Strength = 1773
+                            Strength = 297
                         },
                         new
                         {
                             Id = 118,
                             Name = "Kusunoki Masashige",
-                            Strength = 1152
+                            Strength = 30
                         },
                         new
                         {
                             Id = 119,
                             Name = "Kuwana Tarozaemon",
-                            Strength = 1511
+                            Strength = 834
                         },
                         new
                         {
                             Id = 120,
                             Name = "Kumagai Naozane",
-                            Strength = 453
+                            Strength = 868
                         },
                         new
                         {
                             Id = 121,
                             Name = "Maeda Keiji",
-                            Strength = 1828
+                            Strength = 1716
                         },
                         new
                         {
                             Id = 122,
                             Name = "Maeda Matsu",
-                            Strength = 1220
+                            Strength = 430
                         },
                         new
                         {
                             Id = 123,
                             Name = "Maeda Nagatane",
-                            Strength = 1327
+                            Strength = 434
                         },
                         new
                         {
                             Id = 124,
                             Name = "Maeda Toshiie",
-                            Strength = 797
+                            Strength = 1032
                         },
                         new
                         {
                             Id = 125,
                             Name = "Maeda Toshinaga",
-                            Strength = 485
+                            Strength = 603
                         },
                         new
                         {
                             Id = 126,
                             Name = "Maeda Toshitsune",
-                            Strength = 1509
+                            Strength = 54
                         },
                         new
                         {
                             Id = 127,
                             Name = "Magome Kageyu",
-                            Strength = 874
+                            Strength = 691
                         },
                         new
                         {
                             Id = 128,
                             Name = "Manabe Akifusa",
-                            Strength = 1023
+                            Strength = 691
                         },
                         new
                         {
                             Id = 129,
                             Name = "Matsudaira Katamori",
-                            Strength = 1477
+                            Strength = 1185
                         },
                         new
                         {
                             Id = 130,
                             Name = "Matsudaira Nobutsuna",
-                            Strength = 1937
+                            Strength = 1119
                         },
                         new
                         {
                             Id = 131,
                             Name = "Matsudaira Nobuyasu",
-                            Strength = 1493
+                            Strength = 553
                         },
                         new
                         {
                             Id = 132,
                             Name = "Matsudaira Higo no Kami Katamori",
-                            Strength = 608
+                            Strength = 1032
                         },
                         new
                         {
                             Id = 133,
                             Name = "Matsudaira Sadanobu",
-                            Strength = 782
+                            Strength = 1371
                         },
                         new
                         {
                             Id = 134,
                             Name = "Matsudaira Tadayoshi",
-                            Strength = 1667
+                            Strength = 101
                         },
                         new
                         {
                             Id = 135,
                             Name = "Matsudaira Teru",
-                            Strength = 1584
+                            Strength = 1245
                         },
                         new
                         {
                             Id = 136,
                             Name = "Matsunaga Hisahide",
-                            Strength = 795
+                            Strength = 1400
                         },
                         new
                         {
                             Id = 137,
                             Name = "Matsunaga Hisamichi",
-                            Strength = 1287
+                            Strength = 1338
                         },
                         new
                         {
                             Id = 138,
                             Name = "Matsuo Bashō",
-                            Strength = 1532
+                            Strength = 1763
                         },
                         new
                         {
                             Id = 139,
                             Name = "Matsudaira Motoyasu",
-                            Strength = 816
+                            Strength = 1433
                         },
                         new
                         {
                             Id = 140,
                             Name = "Minamoto no Mitsunaka",
-                            Strength = 98
+                            Strength = 1102
                         },
                         new
                         {
                             Id = 141,
                             Name = "Minamoto no Yoshiie",
-                            Strength = 672
+                            Strength = 1872
                         },
                         new
                         {
                             Id = 142,
                             Name = "Minamoto no Yoshimitsu",
-                            Strength = 560
+                            Strength = 1203
                         },
                         new
                         {
                             Id = 143,
                             Name = "Minamoto no Yoshinaka",
-                            Strength = 1650
+                            Strength = 817
                         },
                         new
                         {
                             Id = 144,
                             Name = "Minamoto no Yoshitomo",
-                            Strength = 934
+                            Strength = 1142
                         },
                         new
                         {
                             Id = 145,
                             Name = "Minamoto no Yoshitsune",
-                            Strength = 266
+                            Strength = 117
                         },
                         new
                         {
                             Id = 146,
                             Name = "Minamoto no Tameyoshi",
-                            Strength = 1029
+                            Strength = 213
                         },
                         new
                         {
                             Id = 147,
                             Name = "Minamoto no Yorimasa",
-                            Strength = 1564
+                            Strength = 1418
                         },
                         new
                         {
                             Id = 148,
                             Name = "Minamoto no Yorimitsu",
-                            Strength = 1747
+                            Strength = 245
                         },
                         new
                         {
                             Id = 149,
                             Name = "Minamoto no Yoritomo",
-                            Strength = 1975
+                            Strength = 1199
                         },
                         new
                         {
                             Id = 150,
                             Name = "Minamoto no Noriyori",
-                            Strength = 1339
+                            Strength = 171
                         },
                         new
                         {
                             Id = 151,
                             Name = "Minoro Takashi",
-                            Strength = 237
+                            Strength = 1303
                         },
                         new
                         {
                             Id = 152,
                             Name = "Miura Anjin",
-                            Strength = 1420
+                            Strength = 507
                         },
                         new
                         {
                             Id = 153,
                             Name = "Miura Yoshimoto",
-                            Strength = 1566
+                            Strength = 1668
                         },
                         new
                         {
                             Id = 154,
                             Name = "Miyamoto Musashi",
-                            Strength = 85
+                            Strength = 676
                         },
                         new
                         {
                             Id = 155,
                             Name = "Miyoshi Chōkei",
-                            Strength = 1971
+                            Strength = 12
                         },
                         new
                         {
                             Id = 156,
                             Name = "Miyoshi Kazuhide",
-                            Strength = 963
+                            Strength = 1437
                         },
                         new
                         {
                             Id = 157,
                             Name = "Miyoshi Masaga",
-                            Strength = 1031
+                            Strength = 1928
                         },
                         new
                         {
                             Id = 158,
                             Name = "Miyoshi Masayasu",
-                            Strength = 1285
+                            Strength = 1002
                         },
                         new
                         {
                             Id = 159,
                             Name = "Miyoshi Moriyata",
-                            Strength = 1858
+                            Strength = 1237
                         },
                         new
                         {
                             Id = 160,
                             Name = "Miyoshi Nagayuki",
-                            Strength = 1344
+                            Strength = 1081
                         },
                         new
                         {
                             Id = 161,
                             Name = "Miyoshi Yoshitsugu",
-                            Strength = 1046
+                            Strength = 994
                         },
                         new
                         {
                             Id = 162,
                             Name = "Mizuno Tadakuni",
-                            Strength = 1756
+                            Strength = 73
                         },
                         new
                         {
                             Id = 163,
                             Name = "Moniwa Yoshinao",
-                            Strength = 202
+                            Strength = 1315
                         },
                         new
                         {
                             Id = 164,
                             Name = "Mōri Motonari",
-                            Strength = 1986
+                            Strength = 924
                         },
                         new
                         {
                             Id = 165,
                             Name = "Mōri Nagasada",
-                            Strength = 150
+                            Strength = 1885
                         },
                         new
                         {
                             Id = 166,
                             Name = "Mori Nagayoshi",
-                            Strength = 1838
+                            Strength = 1386
                         },
                         new
                         {
                             Id = 167,
                             Name = "Mōri Okimoto",
-                            Strength = 1032
+                            Strength = 1713
                         },
                         new
                         {
                             Id = 168,
                             Name = "Mori Ranmaru",
-                            Strength = 948
+                            Strength = 1138
                         },
                         new
                         {
                             Id = 169,
                             Name = "Mōri Takamoto",
-                            Strength = 1908
+                            Strength = 1182
                         },
                         new
                         {
                             Id = 170,
                             Name = "Mori Tadamasa",
-                            Strength = 1707
+                            Strength = 535
                         },
                         new
                         {
                             Id = 171,
                             Name = "Mōri Terumoto",
-                            Strength = 1291
+                            Strength = 1476
                         },
                         new
                         {
                             Id = 172,
                             Name = "Mori Yoshinari",
-                            Strength = 1946
+                            Strength = 1220
                         },
                         new
                         {
                             Id = 173,
                             Name = "Murai Sadakatsu",
-                            Strength = 1975
+                            Strength = 1212
                         },
                         new
                         {
                             Id = 174,
                             Name = "Nagakura Shinpachi",
-                            Strength = 1599
+                            Strength = 1191
                         },
                         new
                         {
                             Id = 175,
                             Name = "Nagao Harukage",
-                            Strength = 619
+                            Strength = 297
                         },
                         new
                         {
                             Id = 176,
                             Name = "Nagao Kagenobu",
-                            Strength = 1894
+                            Strength = 20
                         },
                         new
                         {
                             Id = 177,
                             Name = "Nagao Masakage",
-                            Strength = 1877
+                            Strength = 1853
                         },
                         new
                         {
                             Id = 178,
                             Name = "Nagao Tamekage",
-                            Strength = 1806
+                            Strength = 576
                         },
                         new
                         {
                             Id = 179,
                             Name = "Nakagawa Kiyohide",
-                            Strength = 999
+                            Strength = 670
                         },
                         new
                         {
                             Id = 180,
                             Name = "Nakaoka Shintarō",
-                            Strength = 47
+                            Strength = 1622
                         },
                         new
                         {
                             Id = 181,
                             Name = "Naoe Kagetsuna",
-                            Strength = 870
+                            Strength = 1190
                         },
                         new
                         {
                             Id = 182,
                             Name = "Naoe Kanetsugu",
-                            Strength = 1976
+                            Strength = 1236
                         },
                         new
                         {
                             Id = 183,
                             Name = "Narita Kaihime",
-                            Strength = 1756
+                            Strength = 612
                         },
                         new
                         {
                             Id = 184,
                             Name = "Nene",
-                            Strength = 1444
+                            Strength = 1189
                         },
                         new
                         {
                             Id = 185,
                             Name = "Nihonmatsu Yoshitsugu",
-                            Strength = 395
+                            Strength = 334
                         },
                         new
                         {
                             Id = 186,
                             Name = "Niimi Nishiki",
-                            Strength = 755
+                            Strength = 1651
                         },
                         new
                         {
                             Id = 187,
                             Name = "Niiro Tadamoto",
-                            Strength = 1257
+                            Strength = 1518
                         },
                         new
                         {
                             Id = 188,
                             Name = "Niwa Nagahide",
-                            Strength = 1792
+                            Strength = 210
                         },
                         new
                         {
                             Id = 189,
                             Name = "Niwa Nagashige",
-                            Strength = 726
+                            Strength = 1768
                         },
                         new
                         {
                             Id = 190,
                             Name = "Oda Hiroyoshi",
-                            Strength = 133
+                            Strength = 1947
                         },
                         new
                         {
                             Id = 191,
                             Name = "Oda Nobuhide",
-                            Strength = 1970
+                            Strength = 1151
                         },
                         new
                         {
                             Id = 192,
                             Name = "Oda Nobukata",
-                            Strength = 1637
+                            Strength = 1088
                         },
                         new
                         {
                             Id = 193,
                             Name = "Oda Nobukiyo",
-                            Strength = 1543
+                            Strength = 483
                         },
                         new
                         {
                             Id = 194,
                             Name = "Oda Nobunaga",
-                            Strength = 1281
+                            Strength = 1135
                         },
                         new
                         {
                             Id = 195,
                             Name = "Oda Nobutada",
-                            Strength = 1131
+                            Strength = 1238
                         },
                         new
                         {
                             Id = 196,
                             Name = "Oda Nobutomo",
-                            Strength = 971
+                            Strength = 1486
                         },
                         new
                         {
                             Id = 197,
                             Name = "Oda Nobukatsu",
-                            Strength = 1481
+                            Strength = 765
                         },
                         new
                         {
                             Id = 198,
                             Name = "Oda Nobuyasu",
-                            Strength = 1075
+                            Strength = 188
                         },
                         new
                         {
                             Id = 199,
                             Name = "Ogasawara Shōsai",
-                            Strength = 597
+                            Strength = 1158
                         },
                         new
                         {
                             Id = 200,
                             Name = "Ōishi Kuranosuke",
-                            Strength = 641
+                            Strength = 63
                         },
                         new
                         {
                             Id = 201,
                             Name = "Okada Izō",
-                            Strength = 741
+                            Strength = 14
                         },
                         new
                         {
                             Id = 202,
                             Name = "Judge Ooka",
-                            Strength = 1434
+                            Strength = 1486
                         },
                         new
                         {
                             Id = 203,
                             Name = "Ōta Dōkan",
-                            Strength = 915
+                            Strength = 297
                         },
                         new
                         {
                             Id = 204,
                             Name = "Ōtani Yoshitsugu",
-                            Strength = 1264
+                            Strength = 1801
                         },
                         new
                         {
                             Id = 205,
                             Name = "Ōtani Yoshiharu",
-                            Strength = 8
+                            Strength = 1143
                         },
                         new
                         {
                             Id = 206,
                             Name = "Ōtomo Sōrin",
-                            Strength = 1796
+                            Strength = 1640
                         },
                         new
                         {
                             Id = 207,
                             Name = "Okita Sōji",
-                            Strength = 1903
+                            Strength = 124
                         },
                         new
                         {
                             Id = 208,
                             Name = "Ōkubo Toshimichi",
-                            Strength = 1889
+                            Strength = 360
                         },
                         new
                         {
                             Id = 209,
                             Name = "Okunomiya Masaie",
-                            Strength = 854
+                            Strength = 1430
                         },
                         new
                         {
                             Id = 210,
                             Name = "Ōuchi Yoshitaka",
-                            Strength = 1898
+                            Strength = 952
                         },
                         new
                         {
                             Id = 211,
                             Name = "Omy Yoshika",
-                            Strength = 954
+                            Strength = 1513
                         },
                         new
                         {
                             Id = 212,
                             Name = "Pore Sufi",
-                            Strength = 1500
+                            Strength = 620
                         },
                         new
                         {
                             Id = 213,
                             Name = "Reizei Takatoyo",
-                            Strength = 1332
+                            Strength = 1158
                         },
                         new
                         {
                             Id = 214,
                             Name = "Rokkaku Sadayori",
-                            Strength = 615
+                            Strength = 1079
                         },
                         new
                         {
                             Id = 215,
                             Name = "Rokkaku Yoshiharu",
-                            Strength = 1956
+                            Strength = 47
                         },
                         new
                         {
                             Id = 216,
                             Name = "Rokkaku Yoshikata",
-                            Strength = 51
+                            Strength = 898
                         },
                         new
                         {
                             Id = 217,
                             Name = "Rusu Masakage",
-                            Strength = 604
+                            Strength = 671
                         },
                         new
                         {
                             Id = 218,
                             Name = "Ryūzōji Takanobu",
-                            Strength = 1737
+                            Strength = 205
                         },
                         new
                         {
                             Id = 219,
                             Name = "Saigo Kiyokazu",
-                            Strength = 1621
+                            Strength = 1652
                         },
                         new
                         {
                             Id = 220,
                             Name = "Saigō Masako",
-                            Strength = 701
+                            Strength = 455
                         },
                         new
                         {
                             Id = 221,
                             Name = "Sagara Taketō",
-                            Strength = 1785
+                            Strength = 483
                         },
                         new
                         {
                             Id = 222,
                             Name = "Saigō Takamori",
-                            Strength = 1964
+                            Strength = 1530
                         },
                         new
                         {
                             Id = 223,
                             Name = "Saigo Yoshikatsu",
-                            Strength = 883
+                            Strength = 1071
                         },
                         new
                         {
                             Id = 224,
                             Name = "Saitō Dōsan",
-                            Strength = 53
+                            Strength = 1465
                         },
                         new
                         {
                             Id = 225,
                             Name = "Saitō Hajime",
-                            Strength = 545
+                            Strength = 493
                         },
                         new
                         {
                             Id = 226,
                             Name = "Saito Musashibō Benkei",
-                            Strength = 227
+                            Strength = 129
                         },
                         new
                         {
                             Id = 227,
                             Name = "Saitō Yoshitatsu",
-                            Strength = 239
+                            Strength = 1198
                         },
                         new
                         {
                             Id = 228,
                             Name = "Sakai Tadakiyo",
-                            Strength = 1941
+                            Strength = 921
                         },
                         new
                         {
                             Id = 229,
                             Name = "Sakai Tadashige",
-                            Strength = 383
+                            Strength = 86
                         },
                         new
                         {
                             Id = 230,
                             Name = "Sakai Tadatsugu",
-                            Strength = 1431
+                            Strength = 1566
                         },
                         new
                         {
                             Id = 231,
                             Name = "Sakai Tadayo",
-                            Strength = 716
+                            Strength = 1053
                         },
                         new
                         {
                             Id = 232,
                             Name = "Sakakibara Yasumasa",
-                            Strength = 996
+                            Strength = 1429
                         },
                         new
                         {
                             Id = 233,
                             Name = "Sakamoto Ryōma",
-                            Strength = 665
+                            Strength = 47
                         },
                         new
                         {
                             Id = 234,
                             Name = "Sakuma Morimasa",
-                            Strength = 610
+                            Strength = 1180
                         },
                         new
                         {
                             Id = 235,
                             Name = "Sakuma Nobumori",
-                            Strength = 288
+                            Strength = 1087
                         },
                         new
                         {
                             Id = 236,
                             Name = "Sanada Akihime",
-                            Strength = 1516
+                            Strength = 1769
                         },
                         new
                         {
                             Id = 237,
                             Name = "Sanada Komatsuhime",
-                            Strength = 1063
+                            Strength = 1206
                         },
                         new
                         {
                             Id = 238,
                             Name = "Sanada Masayuki",
-                            Strength = 48
+                            Strength = 1053
                         },
                         new
                         {
                             Id = 239,
                             Name = "Sanada Nobuyuki",
-                            Strength = 434
+                            Strength = 1111
                         },
                         new
                         {
                             Id = 240,
                             Name = "Sanada Yukimura",
-                            Strength = 1063
+                            Strength = 1509
                         },
                         new
                         {
                             Id = 241,
                             Name = "Sasaki Kojirō",
-                            Strength = 1985
+                            Strength = 422
                         },
                         new
                         {
                             Id = 242,
                             Name = "Sassa Narimasa",
-                            Strength = 494
+                            Strength = 1538
                         },
                         new
                         {
                             Id = 243,
                             Name = "Sasuke Sarutobi",
-                            Strength = 1981
+                            Strength = 1181
                         },
                         new
                         {
                             Id = 244,
                             Name = "Serizawa Kamo",
-                            Strength = 1636
+                            Strength = 1414
                         },
                         new
                         {
                             Id = 245,
                             Name = "Shibata Katsuie",
-                            Strength = 1445
+                            Strength = 1757
                         },
                         new
                         {
                             Id = 246,
                             Name = "Shima Sakon",
-                            Strength = 1390
+                            Strength = 323
                         },
                         new
                         {
                             Id = 247,
                             Name = "Shimada Ichirō",
-                            Strength = 947
+                            Strength = 1923
                         },
                         new
                         {
                             Id = 248,
                             Name = "Shimazu Katsuhisa",
-                            Strength = 1526
+                            Strength = 479
                         },
                         new
                         {
                             Id = 249,
                             Name = "Shimazu Tadahisa",
-                            Strength = 1245
+                            Strength = 1897
                         },
                         new
                         {
                             Id = 250,
                             Name = "Shimazu Tadatsune",
-                            Strength = 1664
+                            Strength = 1056
                         },
                         new
                         {
                             Id = 251,
                             Name = "Shimazu Tadayoshi",
-                            Strength = 583
+                            Strength = 728
                         },
                         new
                         {
                             Id = 252,
                             Name = "Shimazu Takahisa",
-                            Strength = 1196
+                            Strength = 414
                         },
                         new
                         {
                             Id = 253,
                             Name = "Shimazu Toyohisa",
-                            Strength = 305
+                            Strength = 1239
                         },
                         new
                         {
                             Id = 254,
                             Name = "Shimazu Yoshihiro",
-                            Strength = 359
+                            Strength = 236
                         },
                         new
                         {
                             Id = 255,
                             Name = "Shimazu Yoshihisa",
-                            Strength = 520
+                            Strength = 440
                         },
                         new
                         {
                             Id = 256,
                             Name = "Shindou Hiroshii",
-                            Strength = 211
+                            Strength = 1549
                         },
                         new
                         {
                             Id = 257,
                             Name = "Sogo Nagayasu",
-                            Strength = 6
+                            Strength = 1328
                         },
                         new
                         {
                             Id = 258,
                             Name = "Sue Yoshitaka",
-                            Strength = 1439
+                            Strength = 1883
                         },
                         new
                         {
                             Id = 259,
                             Name = "Tachibana Muneshige",
-                            Strength = 654
+                            Strength = 1104
                         },
                         new
                         {
                             Id = 260,
                             Name = "Tachibana Dōsetsu",
-                            Strength = 296
+                            Strength = 668
                         },
                         new
                         {
                             Id = 261,
                             Name = "Tachibana Ginchiyo",
-                            Strength = 341
+                            Strength = 483
                         },
                         new
                         {
                             Id = 262,
                             Name = "Taigen Sessai",
-                            Strength = 765
+                            Strength = 618
                         },
                         new
                         {
                             Id = 263,
                             Name = "Taira no Kiyomori",
-                            Strength = 1459
+                            Strength = 1131
                         },
                         new
                         {
                             Id = 264,
                             Name = "Taira Masakado",
-                            Strength = 566
+                            Strength = 1634
                         },
                         new
                         {
                             Id = 265,
                             Name = "Takahashi Shigetane",
-                            Strength = 1228
+                            Strength = 227
                         },
                         new
                         {
                             Id = 266,
                             Name = "Takenaka Shigeharu",
-                            Strength = 1141
+                            Strength = 976
                         },
                         new
                         {
                             Id = 267,
                             Name = "Takasugi Shinsaku",
-                            Strength = 1629
+                            Strength = 327
                         },
                         new
                         {
                             Id = 268,
                             Name = "Takayama Justo",
-                            Strength = 1632
+                            Strength = 1689
                         },
                         new
                         {
                             Id = 269,
                             Name = "Takayama Ukon",
-                            Strength = 899
+                            Strength = 240
                         },
                         new
                         {
                             Id = 270,
                             Name = "Takechi Hanpeita",
-                            Strength = 1290
+                            Strength = 1404
                         },
                         new
                         {
                             Id = 271,
                             Name = "Takeda Katsuyori",
-                            Strength = 573
+                            Strength = 1485
                         },
                         new
                         {
                             Id = 272,
                             Name = "Takeda Nobukatsu",
-                            Strength = 293
+                            Strength = 1018
                         },
                         new
                         {
                             Id = 273,
                             Name = "Takeda Nobushige",
-                            Strength = 245
+                            Strength = 576
                         },
                         new
                         {
                             Id = 274,
                             Name = "Takeda Shingen",
-                            Strength = 1305
+                            Strength = 72
                         },
                         new
                         {
                             Id = 275,
                             Name = "Takenaka Hanbei",
-                            Strength = 311
+                            Strength = 1143
                         },
                         new
                         {
                             Id = 276,
                             Name = "Tani Tadasumi",
-                            Strength = 655
+                            Strength = 622
                         },
                         new
                         {
                             Id = 277,
                             Name = "Tōdō Takatora",
-                            Strength = 303
+                            Strength = 1195
                         },
                         new
                         {
                             Id = 278,
                             Name = "Toki Yorinari",
-                            Strength = 1938
+                            Strength = 1883
                         },
                         new
                         {
                             Id = 279,
                             Name = "Tochimitsu Gantyoki",
-                            Strength = 316
+                            Strength = 972
                         },
                         new
                         {
                             Id = 280,
                             Name = "Tokugawa Ieyasu",
-                            Strength = 1085
+                            Strength = 1379
                         },
                         new
                         {
                             Id = 281,
                             Name = "Tokugawa Hidetada",
-                            Strength = 946
+                            Strength = 903
                         },
                         new
                         {
                             Id = 282,
                             Name = "Tokugawa Nariaki",
-                            Strength = 1925
+                            Strength = 315
                         },
                         new
                         {
                             Id = 283,
                             Name = "Tokugawa Yoshinobu",
-                            Strength = 263
+                            Strength = 360
                         },
                         new
                         {
                             Id = 284,
                             Name = "Torii Mototada",
-                            Strength = 586
+                            Strength = 1023
                         },
                         new
                         {
                             Id = 285,
                             Name = "Toyotomi Hidenaga",
-                            Strength = 577
+                            Strength = 715
                         },
                         new
                         {
                             Id = 286,
                             Name = "Toyotomi Hideyoshi",
-                            Strength = 389
+                            Strength = 915
                         },
                         new
                         {
                             Id = 287,
                             Name = "Toyotomi Hideyori",
-                            Strength = 1221
+                            Strength = 861
                         },
                         new
                         {
                             Id = 288,
                             Name = "Tozuka Tadaharu",
-                            Strength = 473
+                            Strength = 858
                         },
                         new
                         {
                             Id = 289,
                             Name = "Tsukahara Bokuden",
-                            Strength = 1025
+                            Strength = 1646
                         },
                         new
                         {
                             Id = 290,
                             Name = "Uesugi Kagekatsu",
-                            Strength = 517
+                            Strength = 1900
                         },
                         new
                         {
                             Id = 291,
                             Name = "Uesugi Kagetora",
-                            Strength = 1078
+                            Strength = 1812
                         },
                         new
                         {
                             Id = 292,
                             Name = "Uesugi Kenshin",
-                            Strength = 350
+                            Strength = 1401
                         },
                         new
                         {
                             Id = 293,
                             Name = "Ujiie Naotomo",
-                            Strength = 707
+                            Strength = 965
                         },
                         new
                         {
                             Id = 294,
                             Name = "Ukita Naoie",
-                            Strength = 523
+                            Strength = 1067
                         },
                         new
                         {
                             Id = 295,
                             Name = "Ukita Okiie",
-                            Strength = 1499
+                            Strength = 1082
                         },
                         new
                         {
                             Id = 296,
                             Name = "Umezawa Michiharu",
-                            Strength = 1143
+                            Strength = 1308
                         },
                         new
                         {
                             Id = 297,
                             Name = "Usami Sadamitsu",
-                            Strength = 1231
+                            Strength = 1554
                         },
                         new
                         {
                             Id = 298,
                             Name = "Uyama Hisanobu",
-                            Strength = 843
+                            Strength = 466
                         },
                         new
                         {
                             Id = 299,
                             Name = "Wada Shinsuke",
-                            Strength = 171
+                            Strength = 405
                         },
                         new
                         {
                             Id = 300,
                             Name = "Watanabe Kazan",
-                            Strength = 1041
+                            Strength = 781
                         },
                         new
                         {
                             Id = 301,
                             Name = "Watanabe no Tsuna",
-                            Strength = 1422
+                            Strength = 923
                         },
                         new
                         {
                             Id = 302,
                             Name = "Yasumero Kenshin",
-                            Strength = 381
+                            Strength = 1939
                         },
                         new
                         {
                             Id = 303,
                             Name = "Yagyū Jūbei Mitsuyoshi",
-                            Strength = 1696
+                            Strength = 106
                         },
                         new
                         {
                             Id = 304,
                             Name = "Yagyū Munenori",
-                            Strength = 1147
+                            Strength = 714
                         },
                         new
                         {
                             Id = 305,
                             Name = "Yamauchi Kazutoyo",
-                            Strength = 817
+                            Strength = 654
                         },
                         new
                         {
                             Id = 306,
                             Name = "Yamada Arinaga",
-                            Strength = 1230
+                            Strength = 471
                         },
                         new
                         {
                             Id = 307,
                             Name = "Yamada Arinobu",
-                            Strength = 1020
+                            Strength = 1192
                         },
                         new
                         {
                             Id = 308,
                             Name = "Yamada Nagamasa",
-                            Strength = 1317
+                            Strength = 366
                         },
                         new
                         {
                             Id = 309,
                             Name = "Yamagata Masakage",
-                            Strength = 464
+                            Strength = 387
                         },
                         new
                         {
                             Id = 310,
                             Name = "Yamakawa Hiroshi",
-                            Strength = 498
+                            Strength = 1720
                         },
                         new
                         {
                             Id = 311,
                             Name = "Yamakawa Kenjirō",
-                            Strength = 17
+                            Strength = 1568
                         },
                         new
                         {
                             Id = 312,
                             Name = "Yamakawa Naoe",
-                            Strength = 1697
+                            Strength = 1665
                         },
                         new
                         {
                             Id = 313,
                             Name = "Yamanaka Yukimori",
-                            Strength = 1505
+                            Strength = 1182
                         },
                         new
                         {
                             Id = 314,
                             Name = "Yamanami Keisuke",
-                            Strength = 961
+                            Strength = 1687
                         },
                         new
                         {
                             Id = 315,
                             Name = "Yamaoka Tesshū",
-                            Strength = 1160
+                            Strength = 1909
                         },
                         new
                         {
                             Id = 316,
                             Name = "Yanagawa Kenzaburo",
-                            Strength = 146
+                            Strength = 1796
                         },
                         new
                         {
                             Id = 317,
                             Name = "Yanagisawa Yoshiyasu",
-                            Strength = 635
+                            Strength = 57
                         },
                         new
                         {
                             Id = 318,
                             Name = "Yonekura Shigetsugu",
-                            Strength = 976
+                            Strength = 688
                         },
                         new
                         {
                             Id = 319,
                             Name = "Yūki Hideyasu",
-                            Strength = 1815
+                            Strength = 958
                         },
                         new
                         {
                             Id = 320,
                             Name = "Yasuke",
-                            Strength = 1484
+                            Strength = 736
                         });
                 });
 
