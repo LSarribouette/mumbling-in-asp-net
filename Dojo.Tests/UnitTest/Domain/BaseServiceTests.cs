@@ -37,8 +37,6 @@ namespace Dojo.Tests.UnitTest.Domain
 
             //Assert
             CollectionAssert.AreEqual(artsmartiaux, result);
-            //Assert.IsNotNull(result);
-            //Assert.AreEqual(3, result.Count);
         }
 
         [TestMethod]
@@ -86,7 +84,6 @@ namespace Dojo.Tests.UnitTest.Domain
             ArtMartial artMartial = new ArtMartial { Id = 4, Name = "Boxe" };
             Mock<IRepository<ArtMartial>> mockRepository = new Mock<IRepository<ArtMartial>>();
             mockRepository.Setup(r => r.Add(It.IsNotNull<ArtMartial>())).Callback((ArtMartial a) => resultOutput = a);
-            //setup moi lorsqu'on m'envoie un ArtM non null
 
             var baseService = new BaseService<ArtMartial>(mockRepository.Object);
 
