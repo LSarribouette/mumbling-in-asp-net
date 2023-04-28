@@ -21,7 +21,7 @@ namespace Dojo.Web.ApiControllers
             return Ok(_service.FetchAll());
         }
 
-        [HttpGet("/Api/Paged")]
+        [HttpGet("/Api/Samourais/{pageNumber}/{pageSize}")]
         public IActionResult GetAllPaged(int pageNumber, int pageSize)
         {
             return Ok(_service.FetchAllPaged(pageNumber, pageSize));
